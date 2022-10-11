@@ -7,6 +7,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "postinstall": "npm run build",
+    "start": "node server.js",
     "build:npm": "rollup --config build/rollup.config.js && npm run cssmin",
     "cssmin": "postcss dist/vue-flow-form.theme-minimal.css -o dist/vue-flow-form.theme-minimal.min.css && postcss dist/vue-flow-form.theme-green.css -o dist/vue-flow-form.theme-green.min.css && postcss dist/vue-flow-form.theme-purple.css -o dist/vue-flow-form.theme-purple.min.css",
     "build:examples": "vue-cli-service build --dest dist/questionnaire examples/questionnaire/main.js && vue-cli-service build --dest dist/quiz examples/quiz/main.js && vue-cli-service build --dest dist/support-page examples/support-page/main.js"
@@ -28,6 +30,8 @@
     }
   },
   "dependencies": {
+    "express": "^4.18.2",
+    "serve-static": "^1.15.0",
     "vue-textarea-autosize": "^1.1.1",
     "vue-the-mask": "^0.11.1"
   },
